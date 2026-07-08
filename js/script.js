@@ -14,6 +14,15 @@ todoForm.addEventListener("submit", (event) => {
     const li = document.createElement("li");
     li.textContent = text;
 
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "削除";
+
+    deleteButton.addEventListener("click", () => {
+	li.remove();
+    });
+
+    li.appendChild(deleteButton);
+
     todoList.appendChild(li);
 
     todoInput.value = "";
